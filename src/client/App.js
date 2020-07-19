@@ -1,13 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import './app.css';
+import GetText from './api';
 
 const App = () => {
   const [data, setData] = useState({});
+  const url = 'https://saudadeandotherstories.blogspot.com/2018/12/post-break-up-day-18.html';
+
+  const getText = async () => {
+    const res = await GetText(url);
+    setData(res);
+  };
 
   useEffect(() => {
-    fetch('/api/getText')
-      .then(res => res.json())
-      .then(info => setData(info));
+    getText();
   }, []);
 
   return (
