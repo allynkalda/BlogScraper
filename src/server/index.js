@@ -21,8 +21,8 @@ const getData = async (url, send) => {
   send();
 };
 
-app.get('/api/getUsername', (req, res) => {
-  const url = 'https://saudadeandotherstories.blogspot.com/2018/12/post-break-up-day-18.html';
+app.get('/api/getText', (req, res) => {
+  const url = 'https://saudadeandotherstories.blogspot.com/2017/12/maneki-neko.html';
   const send = () => res.send({ title, body });
   getData(url, send);
 });
